@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="medicalModelStoreContainer" CdmEntityContainer="medicalEntities">
+    <EntitySetMapping Name="Abouts">
+      <EntityTypeMapping TypeName="medicalModel.About">
+        <MappingFragment StoreEntitySet="About">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="video" ColumnName="video" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contacts">
+      <EntityTypeMapping TypeName="medicalModel.contact">
+        <MappingFragment StoreEntitySet="contact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="galleries">
+      <EntityTypeMapping TypeName="medicalModel.gallery">
+        <MappingFragment StoreEntitySet="gallery">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="phtosource" ColumnName="phtosource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="helpdesks">
+      <EntityTypeMapping TypeName="medicalModel.helpdesk">
+        <MappingFragment StoreEntitySet="helpdesk">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="aboutext" ColumnName="aboutext" />
+          <ScalarProperty Name="fblink" ColumnName="fblink" />
+          <ScalarProperty Name="instalink" ColumnName="instalink" />
+          <ScalarProperty Name="twitlink" ColumnName="twitlink" />
+          <ScalarProperty Name="dentalemergancyphto" ColumnName="dentalemergancyphto" />
+          <ScalarProperty Name="dentalemergancytext" ColumnName="dentalemergancytext" />
+          <ScalarProperty Name="mapsource" ColumnName="mapsource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="icons">
+      <EntityTypeMapping TypeName="medicalModel.icon">
+        <MappingFragment StoreEntitySet="icons">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="icon1" ColumnName="icon" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="news">
+      <EntityTypeMapping TypeName="medicalModel.news">
+        <MappingFragment StoreEntitySet="news">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="openinghours">
+      <EntityTypeMapping TypeName="medicalModel.openinghour">
+        <MappingFragment StoreEntitySet="openinghours">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="startday" ColumnName="startday" />
+          <ScalarProperty Name="andday" ColumnName="andday" />
+          <ScalarProperty Name="starttime" ColumnName="starttime" />
+          <ScalarProperty Name="andtime" ColumnName="andtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ranges">
+      <EntityTypeMapping TypeName="medicalModel.range">
+        <MappingFragment StoreEntitySet="range">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="medicalModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="text" ColumnName="text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subscribes">
+      <EntityTypeMapping TypeName="medicalModel.subscribe">
+        <MappingFragment StoreEntitySet="subscribe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="medicalModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="teams">
+      <EntityTypeMapping TypeName="medicalModel.team">
+        <MappingFragment StoreEntitySet="team">
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="properties" ColumnName="properties" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="slides">
+      <EntityTypeMapping TypeName="medicalModel.slide">
+        <MappingFragment StoreEntitySet="slide">
+          <ScalarProperty Name="subtext" ColumnName="subtext" />
+          <ScalarProperty Name="text" ColumnName="text" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

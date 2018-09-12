@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="medicalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="About">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="video" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+    <Property Name="isAdmin" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="location" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="250" />
+    <Property Name="fax" Type="nvarchar" MaxLength="250" />
+    <Property Name="mail" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="gallery">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="phtosource" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="helpdesk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="location" Type="nvarchar" MaxLength="250" />
+    <Property Name="logo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="aboutext" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="fblink" Type="nvarchar" MaxLength="250" />
+    <Property Name="instalink" Type="nvarchar" MaxLength="250" />
+    <Property Name="twitlink" Type="nvarchar" MaxLength="250" />
+    <Property Name="dentalemergancyphto" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="dentalemergancytext" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="mapsource" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="icons">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="icon" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="news">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="openinghours">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="startday" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="andday" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="starttime" Type="time" Precision="7" Nullable="false" />
+    <Property Name="andtime" Type="time" Precision="7" Nullable="false" />
+  </EntityType>
+  <EntityType Name="range">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="icon" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="number" Type="int" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="icon" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="slide">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="subtext" Type="nvarchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="subscribe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="team">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="properties" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="photo" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityContainer Name="medicalModelStoreContainer">
+    <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gallery" EntityType="Self.gallery" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="helpdesk" EntityType="Self.helpdesk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="icons" EntityType="Self.icons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="openinghours" EntityType="Self.openinghours" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="range" EntityType="Self.range" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="slide" EntityType="Self.slide" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="subscribe" EntityType="Self.subscribe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="team" EntityType="Self.team" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

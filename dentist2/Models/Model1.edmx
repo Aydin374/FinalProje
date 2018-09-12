@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="medicalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="video" Type="nvarchar" MaxLength="500" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Admins">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+          <Property Name="isAdmin" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="250" />
+          <Property Name="fax" Type="nvarchar" MaxLength="250" />
+          <Property Name="mail" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="gallery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="phtosource" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="helpdesk">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="location" Type="nvarchar" MaxLength="250" />
+          <Property Name="logo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="aboutext" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="fblink" Type="nvarchar" MaxLength="250" />
+          <Property Name="instalink" Type="nvarchar" MaxLength="250" />
+          <Property Name="twitlink" Type="nvarchar" MaxLength="250" />
+          <Property Name="dentalemergancyphto" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="dentalemergancytext" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="mapsource" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="icons">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="icon" Type="nvarchar" MaxLength="300" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="openinghours">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="startday" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="andday" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="starttime" Type="time" Precision="7" Nullable="false" />
+          <Property Name="andtime" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="range">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="icon" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="number" Type="int" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="icon" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="slide">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="title" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="subtext" Type="nvarchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subscribe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="properties" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="text" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="photo" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="medicalModelStoreContainer">
+          <EntitySet Name="About" EntityType="Self.About" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="contact" EntityType="Self.contact" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="gallery" EntityType="Self.gallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="helpdesk" EntityType="Self.helpdesk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="icons" EntityType="Self.icons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="openinghours" EntityType="Self.openinghours" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="range" EntityType="Self.range" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="slide" EntityType="Self.slide" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subscribe" EntityType="Self.subscribe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="team" EntityType="Self.team" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="medicalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="About">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="text" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="video" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="contact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="location" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="gallery">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="phtosource" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="helpdesk">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="location" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="logo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="aboutext" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="fblink" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="instalink" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="twitlink" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="dentalemergancyphto" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="dentalemergancytext" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="mapsource" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="icon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icon1" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="text" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="text" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="openinghour">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="startday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="andday" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="starttime" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="andtime" Type="Time" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="range">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="number" Type="Int32" Nullable="false" />
+          <Property Name="text" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="icon" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="text" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="subscribe">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="medicalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Abouts" EntityType="Self.About" />
+          <EntitySet Name="contacts" EntityType="Self.contact" />
+          <EntitySet Name="galleries" EntityType="Self.gallery" />
+          <EntitySet Name="helpdesks" EntityType="Self.helpdesk" />
+          <EntitySet Name="icons" EntityType="Self.icon" />
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="openinghours" EntityType="Self.openinghour" />
+          <EntitySet Name="ranges" EntityType="Self.range" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="subscribes" EntityType="Self.subscribe" />
+          <EntitySet Name="Admins" EntityType="medicalModel.Admin" />
+          <EntitySet Name="teams" EntityType="medicalModel.team" />
+          <EntitySet Name="slides" EntityType="medicalModel.slide" />
+        </EntityContainer>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="team">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="properties" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="slide">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="photo" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="text" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="subtext" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="medicalModelStoreContainer" CdmEntityContainer="medicalEntities">
+          <EntitySetMapping Name="Abouts">
+            <EntityTypeMapping TypeName="medicalModel.About">
+              <MappingFragment StoreEntitySet="About">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="video" ColumnName="video" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contacts">
+            <EntityTypeMapping TypeName="medicalModel.contact">
+              <MappingFragment StoreEntitySet="contact">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="galleries">
+            <EntityTypeMapping TypeName="medicalModel.gallery">
+              <MappingFragment StoreEntitySet="gallery">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="phtosource" ColumnName="phtosource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="helpdesks">
+            <EntityTypeMapping TypeName="medicalModel.helpdesk">
+              <MappingFragment StoreEntitySet="helpdesk">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="logo" ColumnName="logo" />
+                <ScalarProperty Name="aboutext" ColumnName="aboutext" />
+                <ScalarProperty Name="fblink" ColumnName="fblink" />
+                <ScalarProperty Name="instalink" ColumnName="instalink" />
+                <ScalarProperty Name="twitlink" ColumnName="twitlink" />
+                <ScalarProperty Name="dentalemergancyphto" ColumnName="dentalemergancyphto" />
+                <ScalarProperty Name="dentalemergancytext" ColumnName="dentalemergancytext" />
+                <ScalarProperty Name="mapsource" ColumnName="mapsource" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="icons">
+            <EntityTypeMapping TypeName="medicalModel.icon">
+              <MappingFragment StoreEntitySet="icons">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="icon1" ColumnName="icon" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="medicalModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="openinghours">
+            <EntityTypeMapping TypeName="medicalModel.openinghour">
+              <MappingFragment StoreEntitySet="openinghours">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="startday" ColumnName="startday" />
+                <ScalarProperty Name="andday" ColumnName="andday" />
+                <ScalarProperty Name="starttime" ColumnName="starttime" />
+                <ScalarProperty Name="andtime" ColumnName="andtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ranges">
+            <EntityTypeMapping TypeName="medicalModel.range">
+              <MappingFragment StoreEntitySet="range">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="medicalModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="icon" ColumnName="icon" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="text" ColumnName="text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subscribes">
+            <EntityTypeMapping TypeName="medicalModel.subscribe">
+              <MappingFragment StoreEntitySet="subscribe">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Admins">
+            <EntityTypeMapping TypeName="medicalModel.Admin">
+              <MappingFragment StoreEntitySet="Admins">
+                <ScalarProperty Name="isAdmin" ColumnName="isAdmin" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="teams">
+            <EntityTypeMapping TypeName="medicalModel.team">
+              <MappingFragment StoreEntitySet="team">
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="properties" ColumnName="properties" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="slides">
+            <EntityTypeMapping TypeName="medicalModel.slide">
+              <MappingFragment StoreEntitySet="slide">
+                <ScalarProperty Name="subtext" ColumnName="subtext" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

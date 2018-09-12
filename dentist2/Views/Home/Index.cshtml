@@ -1,0 +1,376 @@
+﻿@model dentist2.Models.ViewHome
+@using dentist2.Models; 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- ============ Slider-Area ============ -->
+<div class="slider">
+    <div class="container-fluid nopad">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+            @foreach (slide item in Model.Slide)
+    {
+        <div class="item" style="background: url('../../Uploads/@item.photo')center center no-repeat;">
+            <div class="slider-caption">
+                <h3>@item.subtext</h3>
+                <h1>@item.title</h1>
+                <p>
+                   @item.text
+                </p>
+                <a href="#" class="btn-brown">Our services</a>
+                <a href="#" class="btn-grey">Contact us</a>
+            </div><!-- /slider-caption -->
+        </div><!-- /item -->
+}
+
+
+        </div><!-- /owl-carousel -->
+    </div><!-- /container -->
+</div><!-- /slider -->
+<!-- ============ Overview-Area ============ -->
+<div class="overview-area secpad">
+    <div class="container">
+        <div class="row">
+        @foreach (icon item in Model.icon)
+        {
+            <div class="col-md-4 text-center mab-30">
+                <img src="~/Uploads/@item.icon1"class="img-responsive" alt="">
+                <h3>@item.title</h3>
+                <p>@item.text</p>
+            </div>
+        }
+            
+
+          
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /overview-area --><hr>
+
+<!-- ============ Welcome-Area ============ -->
+<div class="secpad welcome-area" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-12 mab-30">
+                <div class="section-title mab-30">
+                    <h5><span>ABOUT</span></h5>
+                    <h2>@Model.About.title</h2>
+                    <div class="line1"></div>
+                </div><!-- /section-title -->
+
+                <p>@Model.About.text</p>
+
+                <div class="row">
+                    @foreach (icon item in Model.icon.Take(2))
+    {
+                <div class="col-md-6 col-xs-6">
+                    <div class="about-box">
+                        <img src="~/Uploads/@item.icon1" class="img-icon" alt="">
+                        <h5>@item.title</h5>
+                        <p>@item.text</p>
+                    </div><!-- /about-box -->
+                </div>
+}
+                   
+
+
+                </div>
+            </div>
+
+            <div class="col-md-7 col-sm-12 mab-30">
+                <div class="about-box">
+                    <img src="~/public/img/gal.jpg" class="img-responsive img-rounded" alt="">
+                    <a href="@Model.About.video" target="_blank">
+                        <div class="btn-play">
+                            <i class="fa fa-play"></i>
+                        </div><!-- /btn-play -->
+                    </a>
+                </div><!-- /about-box -->
+            </div>
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /welcome-area -->
+<!-- ============ Service-area ============ -->
+<div class="service-area secpad" id="services">
+    <div class="container">
+        <div class="section-title mab-50 text-center">
+            <h5><span>SERVICE</span></h5>
+            <h1>What We Do</h1>
+            <div class="line"></div>
+        </div><!-- /section-title -->
+
+        <div class="row">
+            @foreach (Service item in Model.service.Take(6))
+    {
+        <div class="col-md-3 col-sm-4">
+            <div class="service-box">
+                <img src="~/Uploads/@item.icon" alt="">
+                <h3>@item.title</h3>
+                <p>
+                   @item.text
+                </p>
+            </div><!-- /service-box -->
+        </div>
+}
+           
+
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /service-area -->
+<!-- ============ Milestone-area ============ -->
+<div class="milestone-area secpad">
+    <div class="container">
+        <div class="row">
+            @foreach (range item in Model.range)
+    {
+        <div class="col-md-4 col-sm-6 col-xs-12 mab-30">
+            <div class="media">
+                <div class="media-left">
+                    <div class="media-box">
+                        <img src="~/Uploads/@item.icon" alt="">
+                    </div>
+                </div>
+                <div class="media-body">
+                    <h1 class="counterUp">@item.number</h1>
+                    <p>@item.text</p>
+                </div>
+            </div><!-- /media -->
+        </div>
+
+}
+            
+
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /milestone-area -->
+<!-- ============ Appointment-area ============ -->
+<div class="appointment-area secpad" id="appointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mab-30">
+                <h1>What to Do in a Dental Emergency?</h1>
+                <p>
+                 @Model.helpdesk.dentalemergancytext
+                </p>
+                <button class="btn-brown" data-toggle="modal" data-target="#myModal">Make appointment</button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <h3>Make an Appointment</h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="Email1">Your Name*</label>
+                                        <input type="text" class="form-control" id="Email1" placeholder="Ex: Jhon Smith">
+                                    </div><!-- /form-group -->
+
+                                    <div class="form-group">
+                                        <label for="Email2">Your Email*</label>
+                                        <input type="email" class="form-control" id="Email2" placeholder="Ex: jhonsmith@gmail.com">
+                                    </div><!-- /form-group -->
+
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-group">
+                                                <label for="Email3">Phone Number</label>
+                                                <input type="text" class="form-control" id="Email3" placeholder="(+61) 123 43598">
+                                            </div><!-- /form-group -->
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                            <div class="form-group">
+                                                <label>Department</label>
+                                                <select class="form-control">
+                                                    <option>Dental</option>
+                                                    <option>Health</option>
+                                                    <option>Teeth</option>
+                                                </select>
+                                            </div><!-- /form-group -->
+                                        </div>
+                                    </div><!-- /row -->
+
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <button class="btn-brown1">Make Appointment</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div><!-- /modal-body -->
+                        </div><!-- /modal-content -->
+                    </div>
+                </div><!-- /modal -->
+            </div>
+
+            <div class="col-md-6 mab-30"></div>
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /appointment-area -->
+<!-- ============ Doctors-area ============ -->
+<div class="doctors-area secpad" id="doctors">
+    <div class="container">
+        <div class="section-title mab-50 text-center">
+            <h5><span>TEAM</span></h5>
+            <h1>Our Dentists</h1>
+            <div class="line"></div>
+        </div><!-- /section-title -->
+
+        <div id="owl-demo1">
+            @foreach (team item in Model.team)
+    {
+        <div class="item">
+            <div class="doctor-box">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <h3>@item.name</h3>
+                        <small>@item.properties</small>
+                        <p class="mat-20">@item.text</p>
+                        <ul class="mat-30">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <img src="~/Uploads/@item.photo" alt="" class="img-responsive img-rounded">
+                    </div>
+                </div>
+            </div><!-- /doctor-box -->
+        </div><!-- /item -->
+}
+
+       
+
+            
+
+         
+        </div>
+    </div><!-- /container -->
+</div><!-- /doctors-area -->
+<!-- ============ Newsletter-area ============ -->
+<div class="newsletter-area">
+    <div class="container">
+        <div class="section-title mab-50 text-center">
+            <h5><span>Subscribe</span></h5>
+            <h1>Our Newsletter</h1>
+            <div class="line"></div>
+            <p class="mat-30">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Quisquam illo <br>praesentium sequi in cum, beatae maiores quae qui.</p>
+        </div><!-- /section-title -->
+
+        <div class="row">
+            <div class="col-md-2"></div>
+
+            <div class="col-md-8">
+                <form>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Enter Address*">
+                        <span class="input-group-btn">
+                            <button class="btn btn-theme" type="submit">Subscribe</button>
+                        </span>
+                    </div><!-- /input-group -->
+                </form>
+            </div>
+
+            <div class="col-md-2"></div>
+        </div>
+    </div><!-- /container -->
+</div><!-- /newsletter-area -->
+<!-- ============ Gallery-area ============ -->
+<div class="gallery-area secpad">
+    <div class="container">
+        <div class="section-title mab-50 text-center">
+            <h5><span>PHOTOS</span></h5>
+            <h1>Our Gallery</h1>
+            <div class="line"></div>
+        </div><!-- /section-title -->
+
+        <div class="row mab-30">
+            @foreach (gallery item in Model.gallery.Take(6))
+    {
+        <div class="col-md-4 col-sm-6 col-xs-6 nopad">
+            <div class="hover">
+                <img src="~/Uploads/@item.phtosource" alt="" class="img-responsive">
+                <a href="~/Uploads/@item.phtosource" data-fancybox="image">
+                    <i class="fa fa-arrows-alt"></i>
+                </a>
+            </div><!-- /hover -->
+        </div>
+}
+
+
+
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /gallery-area -->
+<!-- ============ Testimonial-area ============ -->
+<div class="testimonial-area secpad">
+    <div class="container mab-30">
+        <div id="owl-demo2" class="owl-carousel owl-theme">
+            @foreach (team item in Model.team)
+    {
+        <div class="item">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center">
+                    <img src="~/Uploads/@item.photo" class="img-responsive img-circle" alt="">
+                    <h3>@item.name</h3>
+                    <small>@item.properties</small>
+                    <ul>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                    </ul>
+                    <p>@item.text</p>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div><!-- /item -->
+}
+
+
+
+
+        </div>
+    </div><!-- /container -->
+</div><!-- /testimonial-area -->
+<!-- ============ Blog-area ============ -->
+<div class="blog-area secpad" id="blog">
+    <div class="container">
+        <div class="section-title mab-50 text-center">
+            <h5><span>NEWS</span></h5>
+            <h1>Read our latest blog</h1>
+            <div class="line"></div>
+        </div><!-- /section-title -->
+
+        <div class="row">
+        @foreach (news item in Model.news)
+        {
+            <div class="col-md-4 col-sm-4 mab-30">
+                <img src="~/Uploads/@item.photo" class="img-responsive" alt="">
+                <div class="blog-box">
+                    <h3>@item.title</h3>
+                    <small>@item.date</small>
+                    <p>@item.text</p>
+                    <a href="#">Read more</a>
+                </div><!-- /blog-box -->
+            </div>
+        }
+            
+
+          
+        </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /blog-area -->
+<!-- ============ Map-area ============ -->
+<div class="container-fluid nopad">
+    <div id="map"></div>
+</div>
+
+

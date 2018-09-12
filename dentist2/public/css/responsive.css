@@ -1,0 +1,112 @@
+/* Medium Layout: 1200px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+	.navbar-header {
+	    margin-bottom: -50px;
+	}
+}
+
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	header {
+		position: relative;
+	}
+	.topbar {
+		display: none;
+	}
+	.slider-caption {
+		padding: 150px 0;
+	}
+	.navbar-default .container {
+		box-shadow: none;
+	}
+	.navbar-header {
+	    /*float: left;*/
+	    text-align: center;
+	    width: 100%;
+	}
+	.navbar-brand {
+		float: none;
+	}
+	.navbar-brand img {
+		margin: auto;
+	}
+	.doctor-box .img-responsive {
+		width: 100%;
+	}
+}
+
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) {
+
+}
+
+@media only screen and (min-width: 575px) and (max-width: 767px) {
+	.navbar-brand  {
+		padding: 0;
+		margin-top: -10px;
+		width: 60%;
+	}
+}
+
+@media only screen and (min-width: 435px) and (max-width: 574px) {
+	.navbar-brand  {
+		padding: 0;
+		margin-top: -10px;
+	}
+}
+
+
+/* Wide Mobile Layout: 375px. */
+@media only screen and (min-width: 375px) and (max-width: 767px) {
+	header {
+		position: relative;
+	}
+	.topbar {
+		display: none;
+	}
+	.slider-caption {
+		padding: 60px 0;
+	}
+	.slider-caption h3 {
+		font-size: 14px;
+	}
+	.slider-caption h1 {
+		font-size: 20px;
+	}
+	.slider-caption p {
+		padding: 0;
+	}
+	.slider .owl-carousel .item {
+		min-height: 300px;
+	}
+	.slider .btn-brown, .slider .btn-grey {
+		display: none;
+	}
+	.modal-body {
+		padding: 20px;
+	}
+	.appointment-area h1 {
+		font-size: 40px;
+	}
+	.doctors-area .col-xs-12 {
+		margin-bottom: 30px;
+	}
+	.navbar-default .nav-search {
+		display: none;
+	}
+	.navbar-default .navbar-toggle .icon-bar {
+		background-color: #fff;
+	}
+	.navbar-default .navbar-toggle {
+		border-color: #b0a377;
+		background-color: #b0a377;
+	}
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+		background-color: #b0a377;
+	}
+	.doctors-area #owl-demo1 .item {
+  		margin-right: 0px;
+	}
+}

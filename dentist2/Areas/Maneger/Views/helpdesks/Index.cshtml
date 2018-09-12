@@ -1,0 +1,82 @@
+﻿@model IEnumerable<dentist2.Models.helpdesk>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Maneger/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.logo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aboutext)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fblink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.instalink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.twitlink)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dentalemergancyphto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dentalemergancytext)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mapsource)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            <img src="~/Uploads/@Html.DisplayFor(modelItem => item.logo)" width="100" alt="Alternate Text" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aboutext)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fblink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.instalink)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.twitlink)
+        </td>
+        <td>
+            <img src="~/Uploads/@Html.DisplayFor(modelItem => item.dentalemergancyphto)" width="100" alt="Alternate Text" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dentalemergancytext)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mapsource)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
